@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper
 class UserDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
     override fun onCreate(db: SQLiteDatabase) {
+        // Users 테이블 생성
         val createUsersTable = """
             CREATE TABLE $TABLE_USERS (
                 $COLUMN_USERNAME TEXT PRIMARY KEY, 
@@ -17,6 +18,7 @@ class UserDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_
         """.trimIndent()
         db.execSQL(createUsersTable)
 
+        // Events 테이블 생성
         val createEventsTable = """
             CREATE TABLE $TABLE_EVENTS (
                 $COLUMN_ID INTEGER PRIMARY KEY AUTOINCREMENT, 
@@ -38,9 +40,9 @@ class UserDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_
         onCreate(db)
     }
 
-    // Add a user
+    // 사용자 추가
     fun addUser(username: String, password: String) {
-        val db = this.writableDatabase
+        val db = writableDatabase
         val values = ContentValues().apply {
             put(COLUMN_USERNAME, username)
             put(COLUMN_PASSWORD, password)
@@ -49,9 +51,9 @@ class UserDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_
         db.close()
     }
 
-    // Check if user exists
+    // 사용자 인증 확인
     fun checkUser(username: String, password: String): Boolean {
-        val db = this.readableDatabase
+        val db = readableDatabase
         val cursor = db.query(
             TABLE_USERS,
             arrayOf(COLUMN_USERNAME),
@@ -65,9 +67,9 @@ class UserDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_
         return count > 0
     }
 
-    // Check if username exists
+    // 사용자 존재 확인
     fun checkUserExists(username: String): Boolean {
-        val db = this.readableDatabase
+        val db = readableDatabase
         val cursor = db.query(
             TABLE_USERS,
             arrayOf(COLUMN_USERNAME),
@@ -81,9 +83,9 @@ class UserDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_
         return count > 0
     }
 
-    // Add a new event
+    // 새로운 이벤트 추가
     fun addEvent(name: String, details: String, date: String, startTime: String, endTime: String, repeat: Boolean, finish: String) {
-        val db = this.writableDatabase
+        val db = writableDatabase
         val values = ContentValues().apply {
             put(COLUMN_NAME, name)
             put(COLUMN_DETAILS, details)
@@ -97,9 +99,9 @@ class UserDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_
         db.close()
     }
 
-    // Get events for a specific day
+    // 특정 날짜의 이벤트 가져오기
     fun getEventsForDay(day: String): Cursor {
-        val db = this.readableDatabase
+        val db = readableDatabase
         return db.query(
             TABLE_EVENTS,
             arrayOf( // 반환할 컬럼 목록
@@ -116,27 +118,29 @@ class UserDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_
         )
     }
 
-
-    // Get a specific event by ID
+    // 특정 ID의 이벤트 가져오기
     fun getEventById(eventId: Int): Cursor {
-        val db = this.readableDatabase
+        val db = readableDatabase
         return db.query(
             TABLE_EVENTS,
-            arrayOf(COLUMN_ID, COLUMN_NAME, COLUMN_DETAILS, COLUMN_DATE, COLUMN_START_TIME, COLUMN_END_TIME, COLUMN_REPEAT, COLUMN_FINISH),
+            arrayOf(
+                COLUMN_ID, COLUMN_NAME, COLUMN_DETAILS, COLUMN_DATE,
+                COLUMN_START_TIME, COLUMN_END_TIME, COLUMN_REPEAT, COLUMN_FINISH
+            ),
             "$COLUMN_ID=?",
             arrayOf(eventId.toString()),
             null, null, null
         )
     }
 
-    // Delete an event
+    // 이벤트 삭제
     fun deleteEvent(eventId: Int) {
         val db = writableDatabase
         db.delete(TABLE_EVENTS, "$COLUMN_ID=?", arrayOf(eventId.toString()))
         db.close()
     }
 
-    // Update an event
+    // 이벤트 업데이트
     fun updateEvent(eventId: Int, name: String, details: String, date: String, startTime: String, endTime: String) {
         val db = writableDatabase
         val values = ContentValues().apply {
@@ -153,6 +157,7 @@ class UserDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_
     companion object {
         private const val DATABASE_NAME = "userDatabase.db"
         private const val DATABASE_VERSION = 2
+
         private const val TABLE_USERS = "users"
         private const val COLUMN_USERNAME = "username"
         private const val COLUMN_PASSWORD = "password"
