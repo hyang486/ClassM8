@@ -1,0 +1,74 @@
+package com.example.scheduleapp.ui.login
+
+import android.os.Bundle
+import android.view.View
+import android.view.inputmethod.EditorInfo
+import androidx.core.view.isVisible
+import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import com.example.scheduleapp.R
+import com.example.scheduleapp.base.BaseFragment
+import com.example.scheduleapp.base.ViewEvent
+import com.example.scheduleapp.base.ViewState
+import com.example.scheduleapp.databinding.FragmentLoginBinding
+import dagger.hilt.android.AndroidEntryPoint
+
+
+@AndroidEntryPoint
+class LoginFragment : BaseFragment<FragmentLoginBinding>(R.layout.fragment_login) {
+
+    override val viewModel by viewModels<LoginViewModel>()
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initUi()
+    }
+
+
+    override fun initUi() {
+        binding.inputPassLogin.setOnEditorActionListener { _, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_DONE) {
+                viewModel.login()
+                true
+            } else {
+                false
+            }
+        }
+    }
+
+    override fun onChangedViewState(state: ViewState) {
+        when (state) {
+            is LoginViewState -> {
+                binding.progressbar.bringToFront()
+                binding.progressbar.isVisible = state.isLoading
+                with(binding) {
+                    inputEmailLogin.isEnabled = state.isEnable
+                    inputPassLogin.isEnabled = state.isEnable
+                    btnLogin.isEnabled = state.isEnable
+                    btnRegister.isEnabled = state.isEnable
+                }
+            }
+        }
+    }
+
+    override fun onChangeViewEvent(event: ViewEvent) {
+        super.onChangeViewEvent(event)
+        when (event) {
+            is LoginViewEvent.RouteRegister -> {
+                with(binding) {
+                    inputEmailLogin.text.clear()
+                    inputPassLogin.text.clear()
+                }
+                val action = LoginFragmentDirections.actionLoginFragmentToRegisterFragment()
+                findNavController().navigate(action)
+            }
+            is LoginViewEvent.RouteHome -> {
+                val action = LoginFragmentDirections.actionLoginFragmentToHomeFragment()
+                findNavController().navigate(action)
+            }
+        }
+    }
+
+
+}

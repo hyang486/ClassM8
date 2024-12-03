@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ScheduleApp</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="uw_madison">UW-Madison</string>
+    <string name="input_email">Input Email</string>
+    <string name="input_password">Input Password</string>
+    <string name="input_check_password">Input Check Password</string>
+</resources>
