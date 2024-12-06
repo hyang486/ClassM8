@@ -1,7 +1,7 @@
-package com.example.scheduleapp.ui.event
+package com.example.classm8.ui.event
 
-import com.example.scheduleapp.base.BaseViewModel
-import com.example.scheduleapp.data.model.Event
+import com.example.classm8.base.BaseViewModel
+import com.example.classm8.data.model.Event
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

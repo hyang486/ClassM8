@@ -1,7 +1,7 @@
-package com.example.scheduleapp.data.repo
+package com.example.classm8.data.repo
 
-import com.example.scheduleapp.data.model.Event
-import com.example.scheduleapp.data.source.FirebaseRemoteDataSource
+import com.example.classm8.data.model.Event
+import com.example.classm8.data.source.FirebaseRemoteDataSource
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth

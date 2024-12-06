@@ -1,10 +1,10 @@
-package com.example.scheduleapp.ui.map
+package com.example.classm8.ui.map
 
 import androidx.lifecycle.viewModelScope
-import com.example.scheduleapp.base.BaseViewModel
-import com.example.scheduleapp.base.ViewEvent
-import com.example.scheduleapp.common.Result
-import com.example.scheduleapp.usecase.GetCurrentLocationUseCase
+import com.example.classm8.base.BaseViewModel
+import com.example.classm8.base.ViewEvent
+import com.example.classm8.common.Result
+import com.example.classm8.usecase.GetCurrentLocationUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach

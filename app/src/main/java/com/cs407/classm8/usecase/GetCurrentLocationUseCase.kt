@@ -1,4 +1,4 @@
-package com.example.scheduleapp.usecase
+package com.example.classm8.usecase
 
 import android.annotation.SuppressLint
 import android.app.Application
@@ -10,8 +10,8 @@ import com.google.android.gms.tasks.CancellationTokenSource
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.callbackFlow
 import javax.inject.Inject
-import com.example.scheduleapp.common.Result
-import com.example.scheduleapp.ext.hasPermission
+import com.example.classm8.common.Result
+import com.example.classm8.ext.hasPermission
 import com.google.android.gms.maps.model.LatLng
 import kotlin.math.abs
 

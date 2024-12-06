@@ -1,9 +1,9 @@
-package com.example.scheduleapp.di
+package com.example.classm8.di
 
-import com.example.scheduleapp.data.repo.FirebaseRepository
-import com.example.scheduleapp.data.repo.FirebaseRepositoryImpl
-import com.example.scheduleapp.data.source.FirebaseRemoteDataSource
-import com.example.scheduleapp.data.source.FirebaseRemoteDataSourceImpl
+import com.example.classm8.data.repo.FirebaseRepository
+import com.example.classm8.data.repo.FirebaseRepositoryImpl
+import com.example.classm8.data.source.FirebaseRemoteDataSource
+import com.example.classm8.data.source.FirebaseRemoteDataSourceImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

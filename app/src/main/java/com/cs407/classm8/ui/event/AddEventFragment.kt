@@ -1,12 +1,12 @@
-package com.example.scheduleapp.ui.event
+package com.example.classm8.ui.event
 
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.example.scheduleapp.R
-import com.example.scheduleapp.base.BaseFragment
-import com.example.scheduleapp.base.ViewEvent
-import com.example.scheduleapp.base.ViewState
-import com.example.scheduleapp.databinding.FragmentAddEventBinding
+import com.example.classm8.R
+import com.example.classm8.base.BaseFragment
+import com.example.classm8.base.ViewEvent
+import com.example.classm8.base.ViewState
+import com.example.classm8.databinding.FragmentAddEventBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

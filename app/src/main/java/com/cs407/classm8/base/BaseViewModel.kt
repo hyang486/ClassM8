@@ -1,4 +1,4 @@
-package com.example.scheduleapp.base
+package com.example.classm8.base
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

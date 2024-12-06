@@ -1,15 +1,15 @@
-package com.example.scheduleapp.ui.register
+package com.example.classm8.ui.register
 
 import android.os.Bundle
 import android.view.View
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.example.scheduleapp.R
-import com.example.scheduleapp.base.BaseFragment
-import com.example.scheduleapp.base.ViewEvent
-import com.example.scheduleapp.base.ViewState
-import com.example.scheduleapp.databinding.FragmentRegisterBinding
+import com.example.classm8.R
+import com.example.classm8.base.BaseFragment
+import com.example.classm8.base.ViewEvent
+import com.example.classm8.base.ViewState
+import com.example.classm8.databinding.FragmentRegisterBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 

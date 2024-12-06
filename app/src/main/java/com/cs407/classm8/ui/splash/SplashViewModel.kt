@@ -1,9 +1,9 @@
-package com.example.scheduleapp.ui.splash
+package com.example.classm8.ui.splash
 
 import androidx.lifecycle.viewModelScope
-import com.example.scheduleapp.base.BaseViewModel
-import com.example.scheduleapp.usecase.CreateUserEventDBUseCase
-import com.example.scheduleapp.usecase.GetCurrentFirebaseUserUseCase
+import com.example.classm8.base.BaseViewModel
+import com.example.classm8.usecase.CreateUserEventDBUseCase
+import com.example.classm8.usecase.GetCurrentFirebaseUserUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.first
@@ -17,7 +17,7 @@ class SplashViewModel @Inject constructor(
     private val createUserEventDBUseCase: CreateUserEventDBUseCase
 ) : BaseViewModel() {
 
-    init {
+    fun load() {
         viewModelScope.launch {
             val currentUser = currentFirebaseUserUseCase()
 

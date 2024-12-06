@@ -1,6 +1,6 @@
-package com.example.scheduleapp.usecase
+package com.example.classm8.usecase
 
-import com.example.scheduleapp.data.repo.FirebaseRepository
+import com.example.classm8.data.repo.FirebaseRepository
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.callbackFlow
 import kotlinx.coroutines.flow.first

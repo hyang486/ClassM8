@@ -1,4 +1,4 @@
-package com.example.scheduleapp.ext
+package com.example.classm8.ext
 
 
 import com.google.android.gms.tasks.Task

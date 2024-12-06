@@ -1,14 +1,17 @@
-package com.example.scheduleapp.ui.splash
+package com.example.classm8.ui.splash
 
+import android.util.Log
 import android.view.animation.AnimationUtils
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.viewModels
-import com.example.scheduleapp.R
-import com.example.scheduleapp.base.BaseFragment
-import com.example.scheduleapp.base.ViewEvent
-import com.example.scheduleapp.base.ViewState
-import com.example.scheduleapp.databinding.FragmentSplashBinding
-import com.example.scheduleapp.ext.routeHomeFragment
-import com.example.scheduleapp.ext.routeLoginFragment
+import com.example.classm8.R
+import com.example.classm8.base.BaseFragment
+import com.example.classm8.base.ViewEvent
+import com.example.classm8.base.ViewState
+import com.example.classm8.databinding.FragmentSplashBinding
+import com.example.classm8.ext.routeHomeFragment
+import com.example.classm8.ext.routeLoginFragment
+import com.example.classm8.ext.showToast
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -19,6 +22,20 @@ class SplashFragment : BaseFragment<FragmentSplashBinding>(R.layout.fragment_spl
 
     override fun initUi() {
         binding.load.animation = AnimationUtils.loadAnimation(requireContext(), R.anim.rotate)
+        permissionResultLauncher.launch(
+            android.Manifest.permission.ACCESS_FINE_LOCATION
+        )
+    }
+
+    private val permissionResultLauncher = registerForActivityResult(
+        ActivityResultContracts.RequestPermission(),
+    ) { isGranted ->
+        if (isGranted) {
+            viewModel.load()
+        } else {
+            showToast(message = "Please allow location permission.")
+            requireActivity().finish()
+        }
     }
 
     override fun onChangedViewState(state: ViewState) {
@@ -27,6 +44,4 @@ class SplashFragment : BaseFragment<FragmentSplashBinding>(R.layout.fragment_spl
             is SplashViewState.RouteHome -> routeHomeFragment()
         }
     }
-    override fun onChangeViewEvent(event: ViewEvent) {}
-
 }

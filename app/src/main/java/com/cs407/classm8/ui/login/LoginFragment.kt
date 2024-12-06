@@ -1,4 +1,4 @@
-package com.example.scheduleapp.ui.login
+package com.example.classm8.ui.login
 
 import android.os.Bundle
 import android.view.View
@@ -6,11 +6,11 @@ import android.view.inputmethod.EditorInfo
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.example.scheduleapp.R
-import com.example.scheduleapp.base.BaseFragment
-import com.example.scheduleapp.base.ViewEvent
-import com.example.scheduleapp.base.ViewState
-import com.example.scheduleapp.databinding.FragmentLoginBinding
+import com.example.classm8.R
+import com.example.classm8.base.BaseFragment
+import com.example.classm8.base.ViewEvent
+import com.example.classm8.base.ViewState
+import com.example.classm8.databinding.FragmentLoginBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 

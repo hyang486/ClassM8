@@ -1,4 +1,4 @@
-package com.example.scheduleapp.base
+package com.example.classm8.base
 
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable

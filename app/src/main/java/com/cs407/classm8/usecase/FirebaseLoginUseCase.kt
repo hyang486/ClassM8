@@ -1,7 +1,7 @@
-package com.example.scheduleapp.usecase
+package com.example.classm8.usecase
 
-import com.example.scheduleapp.data.repo.FirebaseRepository
-import com.example.scheduleapp.ext.toCallbackFlow
+import com.example.classm8.data.repo.FirebaseRepository
+import com.example.classm8.ext.toCallbackFlow
 import javax.inject.Inject
 
 class FirebaseLoginUseCase @Inject constructor(private val firebaseRepository: FirebaseRepository) {

@@ -1,7 +1,7 @@
-package com.example.scheduleapp.ui.register
+package com.example.classm8.ui.register
 
-import com.example.scheduleapp.base.ViewEvent
-import com.example.scheduleapp.base.ViewState
+import com.example.classm8.base.ViewEvent
+import com.example.classm8.base.ViewState
 
 
 data class RegisterViewState(

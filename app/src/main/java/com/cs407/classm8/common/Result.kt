@@ -1,4 +1,4 @@
-package com.example.scheduleapp.common
+package com.example.classm8.common
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch

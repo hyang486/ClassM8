@@ -1,4 +1,4 @@
-package com.example.scheduleapp.base
+package com.example.classm8.base
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,8 +9,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
-import com.example.scheduleapp.BR
-import com.example.scheduleapp.ext.showToast
+import com.example.classm8.BR
+import com.example.classm8.ext.showToast
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.map
 

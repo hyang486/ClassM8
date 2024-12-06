@@ -1,15 +1,13 @@
-package com.example.scheduleapp.ui.register
+package com.example.classm8.ui.register
 
 import androidx.lifecycle.viewModelScope
-import com.example.scheduleapp.base.BaseViewModel
-import com.example.scheduleapp.base.ViewEvent
-import com.example.scheduleapp.ui.login.LoginViewEvent
-import com.example.scheduleapp.ui.login.LoginViewState
-import com.example.scheduleapp.usecase.CheckInputRegisterUseCase
-import com.example.scheduleapp.usecase.CheckRegisterState
-import com.example.scheduleapp.usecase.CreateUserEventDBUseCase
-import com.example.scheduleapp.usecase.FirebaseRegisterUseCase
-import com.example.scheduleapp.usecase.RegisterErrorType
+import com.example.classm8.base.BaseViewModel
+import com.example.classm8.base.ViewEvent
+import com.example.classm8.usecase.CheckInputRegisterUseCase
+import com.example.classm8.usecase.CheckRegisterState
+import com.example.classm8.usecase.CreateUserEventDBUseCase
+import com.example.classm8.usecase.FirebaseRegisterUseCase
+import com.example.classm8.usecase.RegisterErrorType
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.first

@@ -1,4 +1,4 @@
-package com.example.scheduleapp.di
+package com.example.classm8.di
 
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore

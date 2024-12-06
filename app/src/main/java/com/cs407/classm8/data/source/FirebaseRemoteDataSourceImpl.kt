@@ -1,6 +1,6 @@
-package com.example.scheduleapp.data.source
+package com.example.classm8.data.source
 
-import com.example.scheduleapp.data.model.Event
+import com.example.classm8.data.model.Event
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth

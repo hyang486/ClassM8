@@ -1,6 +1,6 @@
-package com.example.scheduleapp.ui.home
+package com.example.classm8.ui.home
 
-import com.example.scheduleapp.base.ViewEvent
+import com.example.classm8.base.ViewEvent
 
 
 sealed class HomeViewEvent : ViewEvent {

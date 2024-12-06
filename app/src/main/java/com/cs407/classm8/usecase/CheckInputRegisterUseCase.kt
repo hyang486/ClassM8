@@ -1,4 +1,4 @@
-package com.example.scheduleapp.usecase
+package com.example.classm8.usecase
 
 import javax.inject.Inject
 

@@ -1,6 +1,6 @@
-package com.example.scheduleapp.ui.splash
+package com.example.classm8.ui.splash
 
-import com.example.scheduleapp.base.ViewState
+import com.example.classm8.base.ViewState
 
 sealed interface SplashViewState : ViewState {
     data object RouteLogin : SplashViewState

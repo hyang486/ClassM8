@@ -1,4 +1,4 @@
-package com.example.scheduleapp.data.model
+package com.example.classm8.data.model
 
 data class Event(
     val name: String = "",
