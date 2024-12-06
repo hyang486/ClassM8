@@ -1,4 +1,4 @@
-ppackage com.example.scheduleapp.ui.event
+package com.example.scheduleapp.ui.event
 
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController

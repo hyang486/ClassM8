@@ -8,11 +8,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.scheduleapp"
+    namespace = "com.example.classm8"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.scheduleapp"
+        applicationId = "com.example.classm8"
         minSdk = 28
         targetSdk = 35
         versionCode = 1
@@ -57,6 +57,7 @@ dependencies {
     implementation("com.google.dagger:hilt-android:2.52")
     kapt("com.google.dagger:hilt-android-compiler:2.51.1")
 
+    implementation("com.airbnb.android:lottie:6.1.0")
 
     implementation("androidx.activity:activity-ktx:1.9.3")
     implementation("androidx.fragment:fragment-ktx:1.8.5")
