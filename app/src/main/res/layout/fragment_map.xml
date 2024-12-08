@@ -6,7 +6,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.classm8.ui.map.GoogleMapViewModel" />
+            type="com.example.scheduleapp.ui.map.GoogleMapViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

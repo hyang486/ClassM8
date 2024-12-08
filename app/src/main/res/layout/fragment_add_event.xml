@@ -6,7 +6,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.classm8.ui.event.AddEventViewModel" />
+            type="com.example.scheduleapp.ui.event.AddEventViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -247,6 +247,7 @@
                 android:layout_weight="1"
                 android:backgroundTint="@color/edit_background"
                 android:gravity="center"
+                android:onClick="@{()->viewModel.routeGoogleMap()}"
                 android:text="Add"
                 android:textColor="@color/black"
                 android:textSize="20dp" />

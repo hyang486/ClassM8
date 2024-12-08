@@ -8,11 +8,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.classm8"
+    namespace = "com.example.scheduleapp"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.classm8"
+        applicationId = "com.example.scheduleapp"
         minSdk = 28
         targetSdk = 35
         versionCode = 1

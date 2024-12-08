@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "classm8"
+rootProject.name = "ScheduleApp"
 include(":app")

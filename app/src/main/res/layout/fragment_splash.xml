@@ -6,7 +6,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.classm8.ui.splash.SplashViewModel" />
+            type="com.example.scheduleapp.ui.splash.SplashViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
