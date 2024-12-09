@@ -3,7 +3,7 @@ package com.example.scheduleapp.ui.login
 import androidx.lifecycle.viewModelScope
 import com.example.scheduleapp.base.BaseViewModel
 import com.example.scheduleapp.base.ViewEvent
-import com.example.scheduleapp.usecase.CheckExistUserEventDBUseCase
+//import com.example.scheduleapp.usecase.CheckExistUserEventDBUseCase
 import com.example.scheduleapp.usecase.CheckInputLogInUseCase
 import com.example.scheduleapp.usecase.CheckLoginState
 import com.example.scheduleapp.usecase.CreateUserEventDBUseCase
@@ -14,7 +14,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.onEach
+//import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -22,7 +22,7 @@ import javax.inject.Inject
 @HiltViewModel
 class LoginViewModel @Inject constructor(
     private val checkInputLogInUseCase: CheckInputLogInUseCase,
-    private val checkExistUserEventDBUseCase: CheckExistUserEventDBUseCase,
+//    private val checkExistUserEventDBUseCase: CheckExistUserEventDBUseCase,
     private val createUserEventDBUseCase: CreateUserEventDBUseCase,
     private val firebaseLoginUseCase: FirebaseLoginUseCase
 ) : BaseViewModel() {
