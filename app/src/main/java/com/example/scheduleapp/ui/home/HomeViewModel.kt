@@ -32,7 +32,7 @@ class HomeViewModel @Inject constructor(
         if (firebaseLogoutUseCase()) {
             onChangedViewEvent(HomeViewEvent.Logout)
         } else {
-            onChangedViewEvent(ViewEvent.ShowToast("로그아웃을 실패하였습니다."))
+            onChangedViewEvent(ViewEvent.ShowToast("faild on login"))
             onChangedViewEvent(HomeViewEvent.CloseDrawer)
         }
     }
