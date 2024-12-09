@@ -55,14 +55,14 @@ class LoginViewModel @Inject constructor(
                                 if (isCreate) {
                                     onChangedViewEvent(LoginViewEvent.RouteHome)
                                 } else {
-                                    onChangedViewEvent(ViewEvent.ShowToast("로그인을 실패하였습니다."))
+                                    onChangedViewEvent(ViewEvent.ShowToast("Login Failed."))
                                     onChangedViewState(
                                         LoginViewState(isEnable = true, isLoading = false)
                                     )
                                 }
                             }.first()
                         } else {
-                            onChangedViewEvent(ViewEvent.ShowToast("로그인을 실패하였습니다."))
+                            onChangedViewEvent(ViewEvent.ShowToast("The login attempt has failed."))
                             onChangedViewState(
                                 LoginViewState(isEnable = true, isLoading = false)
                             )
@@ -77,15 +77,15 @@ class LoginViewModel @Inject constructor(
         viewModelScope.launch {
             when (type) {
                 LoginErrorType.NotInputEmail -> {
-                    onChangedViewEvent(ViewEvent.ShowToast("이메일을 입력해주세요."))
+                    onChangedViewEvent(ViewEvent.ShowToast("Please enter your email."))
                 }
 
                 LoginErrorType.NotInputPassword -> {
-                    onChangedViewEvent(ViewEvent.ShowToast("비밀번호를 입력해주세요."))
+                    onChangedViewEvent(ViewEvent.ShowToast("Please enter your password."))
                 }
 
                 LoginErrorType.InvalidEmail -> {
-                    onChangedViewEvent(ViewEvent.ShowToast("이메일 형식이 올바르지 않습니다."))
+                    onChangedViewEvent(ViewEvent.ShowToast("The email format is incorrect."))
                 }
             }
         }

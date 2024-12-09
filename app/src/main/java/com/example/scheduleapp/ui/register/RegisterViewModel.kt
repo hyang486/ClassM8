@@ -60,14 +60,14 @@ class RegisterViewModel @Inject constructor(
                             if (isCreate) {
                                 onChangedViewEvent(RegisterViewEvent.RouteHome)
                             } else {
-                                onChangedViewEvent(ViewEvent.ShowToast("로그인을 실패하였습니다."))
+                                onChangedViewEvent(ViewEvent.ShowToast("Login failed."))
                                 onChangedViewState(
                                     RegisterViewState(isEnable = true, isLoading = false)
                                 )
                             }
                         }.first()
                     } else {
-                        onChangedViewEvent(ViewEvent.ShowToast("회원가입을 실패하였습니다."))
+                        onChangedViewEvent(ViewEvent.ShowToast("Sign-up failed."))
                         onChangedViewState(
                             RegisterViewState(isEnable = true, isLoading = false)
                         )
@@ -81,15 +81,15 @@ class RegisterViewModel @Inject constructor(
         viewModelScope.launch {
             when (type) {
                 RegisterErrorType.NotInputEmail -> {
-                    onChangedViewEvent(ViewEvent.ShowToast("이메일을 입력해주세요."))
+                    onChangedViewEvent(ViewEvent.ShowToast("Please enter your email."))
                 }
 
                 RegisterErrorType.NotInputPassword -> {
-                    onChangedViewEvent(ViewEvent.ShowToast("비밀번호를 입력해 주세요."))
+                    onChangedViewEvent(ViewEvent.ShowToast("Please enter your password."))
                 }
 
                 RegisterErrorType.NotMatchPasswordOk -> {
-                    onChangedViewEvent(ViewEvent.ShowToast("비밀번호 재입력을 올바르게 입력해 주세요."))
+                    onChangedViewEvent(ViewEvent.ShowToast("Please re-enter the password correctly."))
                 }
             }
         }
