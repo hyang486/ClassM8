@@ -16,4 +16,4 @@
             app:defaultNavHost="true"
             app:navGraph="@navigation/nav_add_event" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-</layout>get.ConstraintLayout>
+</layout>
