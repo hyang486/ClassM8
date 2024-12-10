@@ -74,7 +74,7 @@
 
     <fragment
         android:id="@+id/googleMapFragment"
-        android:name="com.example.scheduleapp.ui.map.GoogleMapFragment"
+        android:name="com.example.scheduleapp.ui.event.GoogleMapFragment"
         android:label="GoogleMapFragment">
 
     </fragment>
