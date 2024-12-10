@@ -1,4 +1,4 @@
-package com.example.scheduleapp.ui.event
+package com.example.scheduleapp.ui.event.add
 
 import com.example.scheduleapp.base.ViewEvent
 
