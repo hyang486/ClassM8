@@ -1,4 +1,4 @@
-package com.example.scheduleapp.ui.map
+package com.example.scheduleapp.ui.event
 
 import androidx.lifecycle.viewModelScope
 import com.example.scheduleapp.base.BaseViewModel
