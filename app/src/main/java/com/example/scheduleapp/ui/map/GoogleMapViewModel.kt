@@ -4,6 +4,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.scheduleapp.base.BaseViewModel
 import com.example.scheduleapp.base.ViewEvent
 import com.example.scheduleapp.common.Result
+import com.example.scheduleapp.ui.event.GoogleMapViewEvent
 import com.example.scheduleapp.usecase.GetCurrentLocationUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn

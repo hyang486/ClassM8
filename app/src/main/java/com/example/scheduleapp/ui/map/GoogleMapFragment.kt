@@ -7,6 +7,7 @@ import com.example.scheduleapp.base.BaseFragment
 import com.example.scheduleapp.base.ViewEvent
 import com.example.scheduleapp.base.ViewState
 import com.example.scheduleapp.databinding.FragmentMapBinding
+import com.example.scheduleapp.ui.event.GoogleMapViewEvent
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -15,7 +16,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class GoogleMapFragment : BaseFragment<FragmentMapBinding>(R.layout.fragment_map),
+class GoogleMapFragment : BaseFragment<FragmentMapBinding>(R.layout.fragment_google_map),
     OnMapReadyCallback {
 
     private var googleMap: GoogleMap? = null
