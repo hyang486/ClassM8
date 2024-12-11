@@ -53,5 +53,5 @@ class GetCurrentLocationUseCase @Inject constructor(
 }
 
 private fun Location.toLatLng() =
-    LatLng(abs(latitude), abs(longitude))
+    LatLng(latitude, longitude)
 
