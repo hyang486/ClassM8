@@ -6,7 +6,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.scheduleapp.ui.event.AddEventViewModel" />
+            type="com.example.scheduleapp.ui.event.add.AddEventViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -117,9 +117,9 @@
                 android:hint="ex. 2024.11.27"
                 android:lines="1"
                 android:maxLines="1"
+                android:onTextChanged="@{(text, start, before, count) -> viewModel.updateDate(text.toString())}"
                 android:padding="5dp"
                 android:text="@{viewModel.inputEventStateFlow.component2()}"
-                android:onTextChanged="@{(text, start, before, count) -> viewModel.updateDate(text.toString())}"
                 android:textSize="18dp" />
         </LinearLayout>
 
@@ -149,10 +149,10 @@
                 android:layout_weight="2"
                 android:background="@color/edit_background"
                 android:gravity="center"
+                android:hint="ex. 13:00"
                 android:lines="1"
                 android:maxLines="1"
                 android:padding="5dp"
-                android:hint="ex. 13:00"
                 android:text="@{viewModel.inputEventStateFlow.component3()}"
                 android:onTextChanged="@{(text, start, before, count) -> viewModel.updateStartTime(text.toString())}"
                 android:textSize="18dp" />
@@ -189,10 +189,42 @@
                 android:maxLines="1"
                 android:padding="5dp"
                 android:onTextChanged="@{(text, start, before, count) -> viewModel.updateEndTime(text.toString())}"
-                android:text="@{viewModel.inputEventStateFlow.component3()}"
+                android:text="@{viewModel.inputEventStateFlow.component4()}"
                 android:textSize="18dp" />
         </LinearLayout>
 
+
+        <LinearLayout
+            android:id="@+id/locationContainer"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/endTimeContainer"
+            app:layout_constraintVertical_bias="0">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="Location"
+                android:textSize="20dp" />
+            <TextView
+                android:id="@+id/tv_show_map"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:onClick="@{()->viewModel.routeGoogleMap()}"
+                android:lines="1"
+                android:text="@string/click_to_position_the_map"
+                android:maxLines="1"
+                android:padding="5dp"
+                android:textSize="18dp" />
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/detailsContainer"
@@ -203,7 +235,7 @@
             android:orientation="vertical"
             android:weightSum="3"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/endTimeContainer"
+            app:layout_constraintTop_toBottomOf="@id/locationContainer"
             app:layout_constraintVertical_bias="0">
 
             <TextView
@@ -222,9 +254,9 @@
                 android:gravity="center_vertical"
                 android:lines="3"
                 android:maxLines="3"
+                android:onTextChanged="@{(text, start, before, count) -> viewModel.updateDetails(text.toString())}"
                 android:padding="5dp"
                 android:text="@{viewModel.inputEventStateFlow.component5()}"
-                android:onTextChanged="@{(text, start, before, count) -> viewModel.updateDetails(text.toString())}"
                 android:textSize="15dp" />
         </LinearLayout>
 
@@ -247,7 +279,7 @@
                 android:layout_weight="1"
                 android:backgroundTint="@color/edit_background"
                 android:gravity="center"
-                android:onClick="@{()->viewModel.routeGoogleMap()}"
+                android:onClick="@{()->viewModel.add()}"
                 android:text="Add"
                 android:textColor="@color/black"
                 android:textSize="20dp" />
