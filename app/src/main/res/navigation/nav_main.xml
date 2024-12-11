@@ -56,27 +56,6 @@
             app:popUpTo="@id/homeFragment"
             app:popUpToInclusive="true" />
 
-        <action
-            android:id="@+id/action_homeFragment_to_addEventFragment"
-            app:destination="@id/addEventFragment" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/addEventFragment"
-        android:name="com.example.scheduleapp.ui.event.AddEventFragment"
-        android:label="AddEventFragment">
-
-        <action
-            android:id="@+id/action_addEventFragment_to_googleMapFragment"
-            app:destination="@id/googleMapFragment" />
-
-    </fragment>
-
-    <fragment
-        android:id="@+id/googleMapFragment"
-        android:name="com.example.scheduleapp.ui.map.GoogleMapFragment"
-        android:label="GoogleMapFragment">
-
     </fragment>
 
 
