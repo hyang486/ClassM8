@@ -8,11 +8,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.scheduleapp.data.model.Event
 import com.example.scheduleapp.databinding.ItemUpcommingEventBinding
 
-class UpcomingEventsAdapter: ListAdapter<Event, UpcomingEventsViewHolder>(diffUtil) {
+class UpcomingEventsAdapter(
+        private val onItemClick: (Event) -> Unit
+): ListAdapter<Event, UpcomingEventsViewHolder(diffUtil) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UpcomingEventsViewHolder {
         val binding =
             ItemUpcommingEventBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return UpcomingEventsViewHolder(binding)
+        return UpcomingEventsViewHolder(binding, onItemClick)
     }
 
     override fun onBindViewHolder(holder: UpcomingEventsViewHolder, position: Int) {
@@ -32,10 +34,14 @@ class UpcomingEventsAdapter: ListAdapter<Event, UpcomingEventsViewHolder>(diffUt
 
 class UpcomingEventsViewHolder(
     private val binding: ItemUpcommingEventBinding,
+    private val onItemClick: (Event) -> Unit
 ) : RecyclerView.ViewHolder(binding.root) {
 
     fun bind(item: Event) {
         binding.item = item
+        itemView.setOnClickListener {
+            onItemClick(item)
+        }
     }
 
 }

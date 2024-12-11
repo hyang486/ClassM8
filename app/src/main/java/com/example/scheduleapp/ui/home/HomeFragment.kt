@@ -22,9 +22,21 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
 
     override val viewModel by viewModels<HomeViewModel>()
 
-    private val upcomingEventsAdapter = UpcomingEventsAdapter()
+    private val upcomingEventsAdapter = UpcomingEventsAdapter { clickItem ->
+        startActivity(
+            UpdateEventActivity.createIntent(
+                context = requireContext(),
+                event = clickItem
+            )
+        )
+    }
     private val currentScheduleAdapter = CurrentScheduleAdapter { clickItem ->
-        startActivity(UpdateEventActivity.createIntent(context = requireContext(), event = clickItem))
+        startActivity(
+            UpdateEventActivity.createIntent(
+                context = requireContext(),
+                event = clickItem
+            )
+        )
     }
     override fun initUi() {
         binding.rvCurrentEvents.adapter = currentScheduleAdapter
