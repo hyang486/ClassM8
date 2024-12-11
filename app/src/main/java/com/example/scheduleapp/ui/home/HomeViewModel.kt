@@ -48,8 +48,11 @@ class HomeViewModel @Inject constructor(
 
     private fun toHomeViewState(list: List<Event>): HomeViewState =
         HomeViewState(
-            currentEvents = list.filter { it.date == getCurrentDateString() },
+            currentEvents = list.filter { it.date == getCurrentDateString() }
+                .sortedBy { it.startTime },
             upcomingEvents = list.filter { isDateLater(it.date, getCurrentDateString()) }
-                .sortedBy { it.date }.take(5)
+                .sortedWith(
+                    compareBy<Event> { it.date }.thenBy { it.startTime }
+                ).take(5)
         )
 }
