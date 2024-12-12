@@ -10,7 +10,7 @@ import com.example.scheduleapp.databinding.ItemUpcommingEventBinding
 
 class UpcomingEventsAdapter(
         private val onItemClick: (Event) -> Unit
-): ListAdapter<Event, UpcomingEventsViewHolder(diffUtil) {
+): ListAdapter<Event, UpcomingEventsViewHolder>(diffUtil) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UpcomingEventsViewHolder {
         val binding =
             ItemUpcommingEventBinding.inflate(LayoutInflater.from(parent.context), parent, false)
